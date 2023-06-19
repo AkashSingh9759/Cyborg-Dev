@@ -13,8 +13,24 @@ const Footer = () => {
     const router = useRouter();
 
     useEffect(()=>{
-        var offsetHeight = document.getElementsByTagName('footer')[0].offsetHeight;
-        document.getElementById("fake-footer").style.height = (offsetHeight - 15)+'px';
+        window.addEventListener("load", onLoadFunction);
+        function onLoadFunction(e){
+            var bodyHeight = document.getElementsByTagName('body')[0].offsetHeight;
+            var footerHeight = document.getElementsByTagName('footer')[0].offsetHeight;
+            document.getElementById("fake-footer").style.height = (footerHeight - 15)+'px';
+            if(bodyHeight <= footerHeight){
+                document.getElementsByTagName('body')[0].classList.add("footer-relative"); 
+            } 
+        }
+        window.addEventListener("resize", onResizeFunction);
+        function onResizeFunction (e){
+            var bodyHeight = document.getElementsByTagName('body')[0].offsetHeight;
+            var footerHeight = document.getElementsByTagName('footer')[0].offsetHeight;
+            document.getElementById("fake-footer").style.height = (footerHeight - 15)+'px';
+            if(bodyHeight <= footerHeight){
+                document.getElementsByTagName('body')[0].classList.add("footer-relative"); 
+            }
+        }
     },[])
 
   return (<>

@@ -27,14 +27,11 @@ import Twitter from '../components/icons/Twitter'
 import Telegram from '../components/icons/Telegram'
 // import Medium from '../components/icons/Medium'
 import ExternalLink from '@/components/icons/ExternalLink'
-import { useRef, useState } from 'react'
-import { useInView } from "framer-motion";
+import { useState } from 'react'
+import { motion } from "framer-motion"
 
 
 export default function Home() {
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
 
   const [popup, setPopup] = useState("hide");
 
@@ -55,28 +52,28 @@ export default function Home() {
         <section className='common-section home-hero-section'>
         <div className='container'>
         <div className='home-wrap d-flex a-center'>
-          <div className='d-left'>
+          <motion.div className='d-left' transition={{ type: "spring", bounce: 0.25, duration: 2 }} initial={{ opacity: 0, translateX: -200 }} whileInView={{ opacity: 1, translateX: 0 }}>
           <div className='hw-left'>
           <h1 className="hero-heading"><span>Decentralizing </span>the Edge for Everyone</h1>
           <p className='home-desc'>Scalable, Secure, and Reliable Computing at the Edge</p>
           <span onClick={popupShow}><Button title="Learn More" link="/" size="btn-md"/></span>
           </div>
-          </div>
-          <div className='d-right'>
+          </motion.div>
+          <motion.div className='d-right' transition={{ type: "spring", bounce: 0.25, duration: 2 }} initial={{ opacity: 0, translateX: 200 }} whileInView={{ opacity: 1, translateX: 0 }}>
           <div className="hw-right">
             <Image src={homeCover} alt='home-cover-image'/>
           </div>
-          </div>
+          </motion.div>
           </div>
         </div>
         </section>
 
         <section className='common-section six-section middle-blur left-logo-bg'>
           <div className='container'>
-          <h2 className="section-heading"><span>Unlock the Potential of the
-          </span>Edge with Decentralized Computing</h2>
+          <motion.h2 className="section-heading" transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}><span>Unlock the Potential of the
+          </span>Edge with Decentralized Computing</motion.h2>
           <div className='box-wrap'>
-            <div className='box-content'>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -89,8 +86,8 @@ export default function Home() {
                 </div>
                 </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -103,8 +100,8 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -117,8 +114,8 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -131,8 +128,8 @@ export default function Home() {
                 </div>
                 </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -145,8 +142,8 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.5 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -159,25 +156,25 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            </div>
+            </motion.div>
           </div>
           </div>
         </section>
 
         <section className='common-section testimonial-section right-logo-bg left-blur'>
-          <div className='container'>
+          <motion.div className='container' transition={{ ease: "easeInOut", duration: 0.75 }} initial={{ opacity: 0, translateY: 200 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='ts-heading'>
               <Image src={testimonial} alt='testimonial'/>
             </div>
             <div className='ts-slider-wrap custom-owl-dots'>
               <Tesimonial/>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         <section className='common-section partners-section right-blur'>
           <div className='container'>
-          <h2 className="section-heading">Our Trusted Partners</h2>
+          <motion.h2 className="section-heading" transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>Our Trusted Partners</motion.h2>
           <div className='ps-slider-wrap custom-owl-dots'>
           <Partner/>
           </div>
@@ -186,19 +183,19 @@ export default function Home() {
 
         <section className='common-section backers-section right-blur'>
           <div className='container'>
-          <h2 className="section-heading">Our Backers</h2>
-          <div className='ps-slider-wrap custom-owl-dots'>
+          <motion.h2 className="section-heading" transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>Our Backers</motion.h2>
+          <motion.div className='ps-slider-wrap custom-owl-dots' transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }}>
           <Backer/>
-          </div>
+          </motion.div>
           </div>
         </section>
 
         <section className='common-section nine-section bottom-blur'>
           <div className='container'>
-          <h2 className="section-heading"><span>Decentralized Edge Computing:
-          </span>Redefining the Way We Connect</h2>
+          <motion.h2 className="section-heading" transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}><span>Decentralized Edge Computing:
+          </span>Redefining the Way We Connect</motion.h2>
           <div className='box-wrap'>
-            <div className='box-content'>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -211,8 +208,8 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -225,8 +222,8 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -239,8 +236,8 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -253,8 +250,8 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -267,8 +264,8 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.5 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -281,8 +278,8 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.6 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -295,8 +292,8 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.7 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -309,8 +306,8 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
-            <div className='box-content'>
+            </motion.div>
+            <motion.div className='box-content' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.8 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className='box-items'>
@@ -323,7 +320,7 @@ export default function Home() {
                 </div>
               </div>
               </div>
-            </div>
+            </motion.div>
           </div>
           </div>
         </section>

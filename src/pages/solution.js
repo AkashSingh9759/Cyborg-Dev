@@ -6,6 +6,7 @@ import ArchitectureMob from '../../public/images/architecture-mob.svg'
 import StackBarChart from '@/components/StackBarChart'
 import LineBarChart from '@/components/LineBarChart'
 import Circle from '@/components/icons/Circle'
+import { motion } from "framer-motion"
 
 
 export default function Solution() {
@@ -17,14 +18,14 @@ export default function Solution() {
       </Head>
         <section className='common-section solution-hero-section'>
         <div className='container'>
-        <h1 className="hero-heading center-hero-heading">Why Cyborg?</h1>
+        <motion.h1 className="hero-heading center-hero-heading" transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>Why Cyborg?</motion.h1>
         <div className='solution-wrap d-flex a-center'>
-          <div className='d-left'>
+          <motion.div className='d-left' transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.5 }} initial={{ opacity: 0, translateX: -200 }} whileInView={{ opacity: 1, translateX: 0 }}>
           <div className='sw-left'>
           <Image src={solutionCover} alt='solution-cover-image'/>
           </div>
-          </div>
-          <div className='d-right'>
+          </motion.div>
+          <motion.div className='d-right' transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.75 }} initial={{ opacity: 0, translateX: 200 }} whileInView={{ opacity: 1, translateX: 0 }}>
           <div className="sw-right">
           <div className='sw-detail'>
             <h2>An Untapped Market</h2>
@@ -35,27 +36,29 @@ export default function Solution() {
             <p>At Cyborg, we are committed to providing a secure and decentralized infrastructure for edge computing that empowers businesses to leverage the full potential of the decentralized web. Our platform leverages blockchain technology to create an incentivized and efficient ecosystem for edge computing, enabling the secure exchange of data, and reducing the risk of data breaches.</p>
           </div>
           </div>
-          </div>
+          </motion.div>
           </div>
         </div>
         </section>
 
         <section className='common-section architecture-section middle-blur left-logo-bg'>
           <div className='container'>
-            <h2 className="section-heading">Architecture</h2>
+            <motion.h2 className="section-heading" transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>Architecture</motion.h2>
+            <motion.div  transition={{ ease: "easeInOut", duration: 0.75 }} initial={{ opacity: 0, scale: 0.95, delay: 0.25 }} whileInView={{ opacity: 1, scale: 1 }}>
             <Image src={Architecture} alt='Architecture Diagram' className='arc-img arc-web'/>
             <Image src={ArchitectureMob} alt='Architecture Diagram' className='arc-img arc-mob'/>
+            </motion.div>
           </div>
         </section>
 
         <section className='common-section market-section un-clip right-logo-bg left-blur'>
           <div className='container'>
-            <div className='sh-wrap'>
+            <motion.div className='sh-wrap' transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <h2 className="section-heading">Market Validation</h2>
               <p className='section-desc'>Experience our purpose-built platform for edge computing, meeting rising demand for secure and decentralized infrastructure. With a projected <strong>CAGR</strong> of <strong>29%</strong>, we&apos;ll transform the industry, shaping the future and empowering businesses with cutting-edge solutions. Join us now and unlock new possibilities.</p>
-            </div>
+            </motion.div>
             <div className='market-wrap d-flex'>
-              <div className='d-left'>
+              <motion.div className='d-left' transition={{ type: "spring", bounce: 0.25, duration: 1.5, delay: 0.5 }} initial={{ opacity: 0, translateX: -150 }} whileInView={{ opacity: 1, translateX: 0 }}>
                 <div className='mw-left'>
                 <div className='clip-wrap'>
                 <div className='box-clip clip-border'></div>
@@ -73,8 +76,8 @@ export default function Solution() {
                     <p className='mw-desc'>Our cutting-edge technology is being designed to meet the needs of the booming edge market, which is projected to be worth nearly <strong>USD 300 Billion</strong> by <strong>2025</strong>, with over <strong>1,500</strong> network edge data centers expected to be built by telecom operators</p>
                   </div>
                 </div>
-              </div>
-              <div className='d-right'>
+              </motion.div>
+              <motion.div className='d-right' transition={{ type: "spring", bounce: 0.25, duration: 1.5, delay: 0.5 }} initial={{ opacity: 0, translateX: 150 }} whileInView={{ opacity: 1, translateX: 0 }}>
                 <div className='mw-right'>
                 <div className='clip-wrap'>
                 <div className='box-clip clip-border'></div>
@@ -91,7 +94,7 @@ export default function Solution() {
                     <p className='mw-desc'>*Network edge data centres refer to edge data centres within telecom operator facilities that are used for enterprises/consumer applications, but also host network infrastructure (e.g. core, access network)</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -99,14 +102,14 @@ export default function Solution() {
         <section className='common-section roadmap-section right-blur'>
           <div className='roadmap-bg'>
           <div className='container'>
-            <div className='sh-wrap'>
+            <motion.div className='sh-wrap' transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <h2 className="section-heading">Roadmap</h2>
               <p className='section-desc'>We have a clear roadmap to guide us in the development and launch of our platform, with milestones including:</p>
-            </div>
+            </motion.div>
             <div className='roadmap-wrap'>
               <div className='rw-content'>
                 <div className='rw-line'></div>
-                <div className='rw-item'>
+                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q2 2023</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'>
@@ -117,50 +120,50 @@ export default function Solution() {
                     </div>
                     </div>
                     </div>
-                </div>
-                <div className='rw-item'>
+                </motion.div>
+                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q3 2023</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'><div className='rw-detail-desc'><div className='clip-wrap'>
               <div className='box-clip clip-border'></div><p><span>Q3 2023</span>Commencement of PoC development</p></div></div>
                 </div>
-                </div>
-                <div className='rw-item'>
+                </motion.div>
+                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q4 2023</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'>
                   <div className='rw-detail-desc'><div className='clip-wrap'>
               <div className='box-clip clip-border'></div><p><span>Q4 2023</span>Release of the Minimum Viable Product (MVP)</p></div></div>
                 </div>
-                </div>
-                <div className='rw-item'>
+                </motion.div>
+                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q1 2024</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'><div className='rw-detail-desc'><div className='clip-wrap'>
               <div className='box-clip clip-border'></div><p><span>Q1 2024</span>Testing, Validation, and Documentation</p></div></div>
                 </div>
-                </div>
-                <div className='rw-item'>
+                </motion.div>
+                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q2 2024</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'><div className='rw-detail-desc'><div className='clip-wrap'>
               <div className='box-clip clip-border'></div><p><span>Q2 2024</span>Community Building and Marketing</p></div></div>
                 </div>
-                </div>
-                <div className='rw-item'>
+                </motion.div>
+                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.5 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q3 2024</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'><div className='rw-detail-desc'><div className='clip-wrap'>
               <div className='box-clip clip-border'></div><p><span>Q3 2024</span>Expansion and Partnerships</p></div></div>
                 </div>
-                </div>
-                <div className='rw-item'>
+                </motion.div>
+                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.6 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q4 2024</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'><div className='rw-detail-desc'><div className='clip-wrap'>
               <div className='box-clip clip-border'></div><p><span>Q4 2024</span>Full product launch with open access and marketing outreach to increase adoption</p></div></div>
                 </div>
-                </div>
+                </motion.div>
               </div>
               </div>
             </div>

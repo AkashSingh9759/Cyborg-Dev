@@ -60,6 +60,7 @@ body{
   font-weight: var(--regular);
   color: var(--text-light-87);
   background-color: var(--bg-body);
+  min-height: 100vh;
 }
 form *{
   font-family: var(--accord);
@@ -1589,8 +1590,13 @@ filter: blur(75px);
 .form-toast.error p span svg:nth-child(2){
   display: inline-block;
 }
-
-
+.footer-relative #fake-footer{
+  display: none;
+}
+.footer-relative footer{
+    position: relative;
+    bottom: 15px;
+}
 
 
 
@@ -1621,6 +1627,12 @@ filter: blur(75px);
     font-size: 32px;
     margin-top: -8px;
     margin-bottom: 60px;
+}
+.footer-wrap {
+  padding: 116px 0 25px 0;
+}
+.nine-section, .contact-section{
+  padding-bottom: 40px;
 }
 .common-section {
   padding: 60px 0;
@@ -1724,6 +1736,15 @@ filter: blur(75px);
 @media(max-width: 991px){
   .common-section {
     padding: 40px 0;
+}
+.roadmap-bg:after {
+  height: 150vh;
+}
+.footer-wrap {
+  padding: 96px 0 25px 0;
+}
+.nine-section, .contact-section{
+  padding-bottom: 30px;
 }
 .center-hero-heading{
   margin-bottom: 40px;
