@@ -1,6 +1,6 @@
 /* Accord ================================================= */
 
-@font-face {
+/* @font-face {
   font-family: 'Accord Alternate';
   font-weight: 400;
   src: local('Accord Alternate Regular'), local('AccordAlternate-Regular'), url('../../public/fonts/Accord/AccordAlternate-Regular.woff2') format('woff2');
@@ -19,11 +19,11 @@
   font-family: 'Accord Alternate';
   font-weight: 800;
   src: local('Accord Alternate ExtraBold'), local('AccordAlternate-ExtraBold'), url('../../public/fonts/Accord/AccordAlternate-ExtraBold.woff2') format('woff2');
-}
+} */
 
 /* Gilroy ================================================= */
 
-@font-face {
+/* @font-face {
   font-family: 'Gilroy';
   font-weight: 300;
   src: local('Gilroy Light'), url('../../public/fonts/Gilroy/Gilroy-Light.woff') format('woff');
@@ -63,7 +63,7 @@
   font-family: 'Gilroy';
   font-weight: 900;
   src: local('Gilroy Black'), url('../../public/fonts/Gilroy/Gilroy-Black.woff') format('woff');
-}
+} */
 
 /* Red Hat Display ================================================= */
 
@@ -132,8 +132,8 @@
   --bg-btn-dark: #27332D;
   --bg-btn-dark-hover: #47524D;
 
-  --accord: 'Accord Alternate';
-  --gilroy: 'Gilroy';
+  /* --accord: 'Accord Alternate';
+  --gilroy: 'Gilroy'; */
   --redhatdisplay: 'Red Hat Display';
   --light: 300;
   --regular: 400;
