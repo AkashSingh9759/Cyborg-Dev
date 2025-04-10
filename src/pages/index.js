@@ -54,7 +54,7 @@ export default function Home() {
         <div className='home-wrap d-flex a-center'>
           <motion.div className='d-left' transition={{ type: "spring", bounce: 0.25, duration: 2 }} initial={{ opacity: 0, translateX: -200 }} whileInView={{ opacity: 1, translateX: 0 }}>
           <div className='hw-left'>
-          <h1 className="hero-heading"><span>Decentralizing </span>the Edge for Everyone</h1>
+          <h1 className="hero-heading"><span>Decentralizing </span>the Edge for Everyone.</h1>
           <p className='home-desc'>Scalable, Secure, and Reliable Computing at the Edge</p>
           <span onClick={popupShow}><Button title="Learn More" link="/" size="btn-md"/></span>
           </div>
