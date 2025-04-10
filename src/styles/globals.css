@@ -456,6 +456,10 @@ button.btn{
 }
 .soon-section{
   min-height: 100vh;
+  margin-bottom: 60px;
+}
+.soon-section + footer{
+  display: none;
 }
 .home-hero-section::after, .connect-hero-section::after {
   content: "";
