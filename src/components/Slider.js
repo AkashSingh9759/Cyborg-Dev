@@ -19,6 +19,22 @@ import yh from '../../public/images/partners/yh.svg'
 import nd from '../../public/images/partners/nd.svg'
 import aws from '../../public/images/backers/aws.png'
 import ms from '../../public/images/backers/ms.png'
+import appchain from '../../public/images/programs/appchain.png'
+import tdefi from '../../public/images/programs/tdefi.png'
+import whx from '../../public/images/programs/WHX.png'
+import exp from '../../public/images/programs/EXP.png'
+import pba from '../../public/images/programs/PBA.png'
+import bybit from '../../public/images/programs/BYBIT.png'
+
+import nip from '../../public/images/Partners/nip.png'
+import cess from '../../public/images/Partners/cess.png'
+import ezkl from '../../public/images/Partners/ezkl.png'
+import difc from '../../public/images/Partners/difc.png'
+import dac from '../../public/images/Partners/dac.png'
+import pol from '../../public/images/Partners/pol.png'
+import wfgp from '../../public/images/Partners/wfgp.png'
+import pban from '../../public/images/Partners/pba.png'
+
 
 const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
   ssr: false,
@@ -152,4 +168,35 @@ function Partner() {
       );
     }
 
-  export {Tesimonial, Partner, Backer};
+  function Programs() {
+      return (
+        <OwlCarousel responsive={ResponsiveOne} className='owl-theme' autoplay items={6} smartSpeed={3000} autoplayTimeout={3000}>
+          <div className="ps-content">
+          <a href=""><Image src={nip} alt="nip"/></a>
+          </div>
+          <div className="ps-content">
+          <a href=""><Image src={cess} alt="cess"/></a>
+          </div>
+          <div className="ps-content">
+          <a href=""><Image src={ezkl} alt="ezkl"/></a>
+          </div>
+          <div className="ps-content">
+          <a href=""><Image src={difc} alt="difc"/></a>
+          </div>
+          <div className="ps-content">
+          <a href=""><Image src={dac} alt="dac"/></a>
+          </div>
+          <div className="ps-content">
+          <a href=""><Image src={pol} alt="pol"/></a>
+          </div>
+          <div className="ps-content">
+          <a href=""><Image src={wfgp} alt="wfgp"/></a>
+          </div>
+          <div className="ps-content">
+          <a href=""><Image src={pban} alt="pban"/></a>
+          </div>
+        </OwlCarousel>
+      );
+    }
+
+  export {Tesimonial, Partner, Backer, Programs};

@@ -12,20 +12,20 @@ import { motion } from "framer-motion"
 export default function Solution() {
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>Solution | Cyborg Network</title>
         <meta name="description" content="Cyborg Network - An Untapped Market" />
       </Head>
-        <section className='common-section solution-hero-section'>
+        <section className='common-section solution-hero-section flow-hidden'>
         <div className='container'>
-        <motion.h1 className="hero-heading center-hero-heading" transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>Why Cyborg?</motion.h1>
+        <motion.h1 className="hero-heading center-hero-heading"  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>Why Cyborg?</motion.h1>
         <div className='solution-wrap d-flex a-center'>
-          <motion.div className='d-left' transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.5 }} initial={{ opacity: 0, translateX: -200 }} whileInView={{ opacity: 1, translateX: 0 }}>
+          <motion.div className='d-left'  viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.5 }} initial={{ opacity: 0, translateX: -200 }} whileInView={{ opacity: 1, translateX: 0 }}>
           <div className='sw-left'>
           <Image src={solutionCover} alt='solution-cover-image'/>
           </div>
           </motion.div>
-          <motion.div className='d-right' transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.75 }} initial={{ opacity: 0, translateX: 200 }} whileInView={{ opacity: 1, translateX: 0 }}>
+          <motion.div className='d-right'  viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.75 }} initial={{ opacity: 0, translateX: 200 }} whileInView={{ opacity: 1, translateX: 0 }}>
           <div className="sw-right">
           <div className='sw-detail'>
             <h2>An Untapped Market</h2>
@@ -33,7 +33,7 @@ export default function Solution() {
           </div>
           <div className='sw-detail'>
             <h2>Our Solution</h2>
-            <p>At Cyborg, we are committed to providing a secure and decentralized infrastructure for edge computing that empowers businesses to leverage the full potential of the decentralized web. Our platform leverages blockchain technology to create an incentivized and efficient ecosystem for edge computing, enabling the secure exchange of data, and reducing the risk of data breaches.</p>
+            <p>At Cyborg, our dedication lies in delivering a secure edge computing infrastructure, enabling businesses to harness the complete capabilities of the decentralized web. Through our platform, which harnesses blockchain technology, we establish an incentivized and streamlined ecosystem for edge computing. This facilitates the secure exchange of data using robust cryptographic primitives and Zero-Knowledge (ZK) technology, thereby minimizing the likelihood of data breaches.</p>
           </div>
           </div>
           </motion.div>
@@ -43,8 +43,8 @@ export default function Solution() {
 
         <section className='common-section architecture-section middle-blur left-logo-bg'>
           <div className='container'>
-            <motion.h2 className="section-heading" transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>Architecture</motion.h2>
-            <motion.div  transition={{ ease: "easeInOut", duration: 0.75 }} initial={{ opacity: 0, scale: 0.95, delay: 0.25 }} whileInView={{ opacity: 1, scale: 1 }}>
+            <motion.h2 className="section-heading"  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>Architecture</motion.h2>
+            <motion.div   viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.75 }} initial={{ opacity: 0, scale: 0.95, delay: 0.25 }} whileInView={{ opacity: 1, scale: 1 }}>
             <Image src={Architecture} alt='Architecture Diagram' className='arc-img arc-web'/>
             <Image src={ArchitectureMob} alt='Architecture Diagram' className='arc-img arc-mob'/>
             </motion.div>
@@ -53,12 +53,12 @@ export default function Solution() {
 
         <section className='common-section market-section un-clip right-logo-bg left-blur'>
           <div className='container'>
-            <motion.div className='sh-wrap' transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
+            <motion.div className='sh-wrap'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <h2 className="section-heading">Market Validation</h2>
               <p className='section-desc'>Experience our purpose-built platform for edge computing, meeting rising demand for secure and decentralized infrastructure. With a projected <strong>CAGR</strong> of <strong>29%</strong>, we&apos;ll transform the industry, shaping the future and empowering businesses with cutting-edge solutions. Join us now and unlock new possibilities.</p>
             </motion.div>
-            <div className='market-wrap d-flex'>
-              <motion.div className='d-left' transition={{ type: "spring", bounce: 0.25, duration: 1.5, delay: 0.5 }} initial={{ opacity: 0, translateX: -150 }} whileInView={{ opacity: 1, translateX: 0 }}>
+            <div className='market-wrap d-flex flow-hidden'>
+              <motion.div className='d-left'  viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 1.5, delay: 0.5 }} initial={{ opacity: 0, translateX: -150 }} whileInView={{ opacity: 1, translateX: 0 }}>
                 <div className='mw-left'>
                 <div className='clip-wrap'>
                 <div className='box-clip clip-border'></div>
@@ -77,7 +77,7 @@ export default function Solution() {
                   </div>
                 </div>
               </motion.div>
-              <motion.div className='d-right' transition={{ type: "spring", bounce: 0.25, duration: 1.5, delay: 0.5 }} initial={{ opacity: 0, translateX: 150 }} whileInView={{ opacity: 1, translateX: 0 }}>
+              <motion.div className='d-right'  viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 1.5, delay: 0.5 }} initial={{ opacity: 0, translateX: 150 }} whileInView={{ opacity: 1, translateX: 0 }}>
                 <div className='mw-right'>
                 <div className='clip-wrap'>
                 <div className='box-clip clip-border'></div>
@@ -102,14 +102,14 @@ export default function Solution() {
         <section className='common-section roadmap-section right-blur'>
           <div className='roadmap-bg'>
           <div className='container'>
-            <motion.div className='sh-wrap' transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
+            <motion.div className='sh-wrap'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <h2 className="section-heading">Roadmap</h2>
               <p className='section-desc'>We have a clear roadmap to guide us in the development and launch of our platform, with milestones including:</p>
             </motion.div>
             <div className='roadmap-wrap'>
               <div className='rw-content'>
                 <div className='rw-line'></div>
-                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
+                <motion.div className='rw-item'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q2 2023</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'>
@@ -121,43 +121,43 @@ export default function Solution() {
                     </div>
                     </div>
                 </motion.div>
-                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
+                <motion.div className='rw-item'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q3 2023</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'><div className='rw-detail-desc'><div className='clip-wrap'>
               <div className='box-clip clip-border'></div><p><span>Q3 2023</span>Commencement of PoC development</p></div></div>
                 </div>
                 </motion.div>
-                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
+                <motion.div className='rw-item'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q4 2023</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'>
                   <div className='rw-detail-desc'><div className='clip-wrap'>
-              <div className='box-clip clip-border'></div><p><span>Q4 2023</span>Release of the Minimum Viable Product (MVP)</p></div></div>
+              <div className='box-clip clip-border'></div><p><span>Q4 2023</span>Growth Programs and legal setup</p></div></div>
                 </div>
                 </motion.div>
-                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
+                <motion.div className='rw-item'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q1 2024</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'><div className='rw-detail-desc'><div className='clip-wrap'>
-              <div className='box-clip clip-border'></div><p><span>Q1 2024</span>Testing, Validation, and Documentation</p></div></div>
+              <div className='box-clip clip-border'></div><p><span>Q1 2024</span>MVP and testnet launch</p></div></div>
                 </div>
                 </motion.div>
-                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
+                <motion.div className='rw-item'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q2 2024</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'><div className='rw-detail-desc'><div className='clip-wrap'>
               <div className='box-clip clip-border'></div><p><span>Q2 2024</span>Community Building and Marketing</p></div></div>
                 </div>
                 </motion.div>
-                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.5 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
+                <motion.div className='rw-item'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.5 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q3 2024</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'><div className='rw-detail-desc'><div className='clip-wrap'>
               <div className='box-clip clip-border'></div><p><span>Q3 2024</span>Expansion and Partnerships</p></div></div>
                 </div>
                 </motion.div>
-                <motion.div className='rw-item' transition={{ ease: "easeInOut", duration: 0.5, delay: 0.6 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
+                <motion.div className='rw-item'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.6 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q4 2024</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'><div className='rw-detail-desc'><div className='clip-wrap'>
@@ -168,7 +168,7 @@ export default function Solution() {
               </div>
             </div>
             </div>
-            </section>
+            </section> */}
     </>
   )
 }
