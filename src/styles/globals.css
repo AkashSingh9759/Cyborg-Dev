@@ -413,6 +413,8 @@ button.btn{
 }
 .btn.light.outline:hover{
   opacity: 1;
+  border-color: var(--bg-btn);
+  background: var(--bg-btn);
 }
 .btn-icon{
   max-width: 18px;
@@ -1746,10 +1748,12 @@ background: linear-gradient(160deg, rgba(1, 218, 99, 0.5), rgba(1, 218, 99, 0) 2
 .tsx-link svg path{
   fill: var(--text-light);
 }
-.gallery-wrap{
+.gallery-wrap {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  max-height: 560px;
+  overflow-y: auto;
 }
 .gallery-wrap .gallery-item {
   border: 1px solid #daebe1;

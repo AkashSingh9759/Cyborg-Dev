@@ -2,10 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Barath from '../../public/images/team/barath.jpg'
 import Megha from '../../public/images/team/megha.jpg'
-import Nathaniel from '../../public/images/team/nathaniel.jpeg'
+import Kresna from '../../public/images/team/kresna.png'
+import Nathaniel from '../../public/images/team/nathniel.png'
 import Nikunj from '../../public/images/team/nikunj.jpg'
-import Raisul from '../../public/images/team/raisul.jpg'
-import Tom from '../../public/images/team/tom.jpg'
+import Raisul from '../../public/images/team/rony.png'
+import Tom from '../../public/images/team/tom.png'
+import Akash from '../../public/images/team/akash.png'
 import one from '../../public/images/gallery/1.jpg'
 import two from '../../public/images/gallery/2.jpg'
 import three from '../../public/images/gallery/3.jpg'
@@ -135,7 +137,7 @@ export default function Team() {
             <div className='tsx-main'>
               <motion.div className='tsx-box' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateX: -100 }} whileInView={{ opacity: 1, translateX: 0 }}>
                 <div className='tsx-img'>
-                  <Image src={Barath} alt='Barath'/>
+                  <Image src={Barath} alt='Team'/>
                 </div>
                 <div className='tsx-content'>
                   <h4>Barath Kanna</h4>
@@ -147,7 +149,7 @@ export default function Team() {
               </motion.div>
               <motion.div className='tsx-box' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateX: 100 }} whileInView={{ opacity: 1, translateX: 0 }}>
                 <div className='tsx-img'>
-                  <Image src={Megha} alt='Barath'/>
+                  <Image src={Megha} alt='Team'/>
                 </div>
                 <div className='tsx-content'>
                   <h4>Megha Varshini</h4>
@@ -159,9 +161,21 @@ export default function Team() {
               </motion.div>
             </div>
             <div className='tsx-sub'>
+            <motion.div className='tsx-box' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
+                <div className='tsx-img'>
+                  <Image src={Kresna} alt='Team'/>
+                  <div className='tsx-link'>
+                    <Linkedin/>
+                  </div>
+                </div>
+                <div className='tsx-content'>
+                  <h4>Kresna</h4>
+                  <p>Advisor</p>
+                </div>
+              </motion.div>
               <motion.div className='tsx-box' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
                 <div className='tsx-img'>
-                  <Image src={Tom} alt='Barath'/>
+                  <Image src={Tom} alt='Team'/>
                   <div className='tsx-link'>
                     <Linkedin/>
                   </div>
@@ -173,7 +187,7 @@ export default function Team() {
               </motion.div>
               <motion.div className='tsx-box' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
                 <div className='tsx-img'>
-                  <Image src={Raisul} alt='Barath'/>
+                  <Image src={Raisul} alt='Team'/>
                   <div className='tsx-link'>
                     <Linkedin/>
                   </div>
@@ -185,7 +199,7 @@ export default function Team() {
               </motion.div>
               <motion.div className='tsx-box' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
                 <div className='tsx-img'>
-                  <Image src={Nathaniel} alt='Barath'/>
+                  <Image src={Nathaniel} alt='Team'/>
                   <div className='tsx-link'>
                     <Linkedin/>
                   </div>
@@ -197,7 +211,7 @@ export default function Team() {
               </motion.div>
               <motion.div className='tsx-box' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
                 <div className='tsx-img'>
-                  <Image src={Nikunj} alt='Barath'/>
+                  <Image src={Nikunj} alt='Team'/>
                   <div className='tsx-link'>
                     <Linkedin/>
                   </div>
@@ -205,6 +219,18 @@ export default function Team() {
                 <div className='tsx-content'>
                   <h4>Nikunj Galaiya</h4>
                   <p>AI Engineer</p>
+                </div>
+              </motion.div>
+              <motion.div className='tsx-box' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>
+                <div className='tsx-img'>
+                  <Image src={Akash} alt='Team'/>
+                  <div className='tsx-link'>
+                    <Linkedin/>
+                  </div>
+                </div>
+                <div className='tsx-content'>
+                  <h4>Akash</h4>
+                  <p>UI/UX Engineer</p>
                 </div>
               </motion.div>
             </div>

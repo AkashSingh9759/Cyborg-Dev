@@ -26,7 +26,7 @@ export default function SoonPage() {
             <div className='hw-left'>
             <h1 className="hero-heading">Pre-sale Coming Soon</h1>
             <p className='home-desc'>Turn compute into income. Cyborg Miner lets you run AI inference tasks from your space and earn rewards — no crypto mining, just real utility powering the next-gen AI economy. Be the infrastructure behind the next generation of intelligent apps. Plug in. Power up. Get rewarded.</p>
-            <Button title="Notify Me" link="/connect-miner" size="btn-md" icon={bell}/>
+            <Button title="Notify Me" link="https://tally.so/r/wazvG9" size="btn-md" icon={bell}/>
             </div>
             </motion.div>
 

@@ -26,7 +26,7 @@ export default function SoonPage() {
             <div className='hw-left'>
             <h1 className="hero-heading">App Launching Soon</h1>
             <p className='home-desc'>Cyborg Connect helps AI apps deploy pre-trained models instantly across our global network of hyperlocal AI accelerators — delivering lightning-fast processing and ultra-low latency for your users.</p>
-            <Button title="Notify Me" link="/connect-miner" size="btn-md" icon={bell}/>
+            <Button title="Notify Me" link="https://tally.so/r/nGb5Ep" size="btn-md" icon={bell}/>
             </div>
             </motion.div>
 
