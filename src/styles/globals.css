@@ -418,6 +418,7 @@ button.btn{
 }
 .btn-icon{
   max-width: 18px;
+  max-height: 18px;
   height: auto;
 }
 .text-gradient{
@@ -2030,15 +2031,15 @@ background: linear-gradient(160deg, rgba(1, 218, 99, 0.5), rgba(1, 218, 99, 0) 2
   margin: 0 auto;
 }
 .fwl-content{
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .fwl-content:last-child{
   margin-bottom: 0;
 }
 .fw-item{
   padding: 22px 25px;
-  clip-path: var(--clip-15);
   background: var(--bg-box);
+  border-radius: 15px;
 }
 .fw-header{
   display: flex;
@@ -2046,6 +2047,7 @@ background: linear-gradient(160deg, rgba(1, 218, 99, 0.5), rgba(1, 218, 99, 0) 2
   cursor: pointer;
 }
 .fw-header h4{
+  color: #fff;
   padding-right: 25px;
   font-size: 18px;
   line-height: 25px;
@@ -2578,12 +2580,12 @@ filter: blur(75px);
   height: auto;
 }
 .programs-section .owl-carousel .owl-item .ps-content{
-  padding: 0 30px;
+  padding: 0 15px;
 }
 .programs-section .owl-carousel .owl-item .ps-content a{
     width: 100%;
     display: inline-block;
-    height: 85px;
+    height: 55px;
     margin: 0 15px;
 }
 .programs-section .owl-carousel .owl-item img {
@@ -2712,8 +2714,11 @@ filter: blur(75px);
   justify-content: center;
   align-items: center;
 }
-
-
+.fc-right img{
+  max-width: 280px;
+  height: auto;
+  border-radius: 60px;
+}
 
 
 
@@ -3433,6 +3438,11 @@ filter: blur(75px);
 .image-container {
   height: 220px;
 }
+.footer-credit{
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 20px 30px;
+}
 }
 @media (max-width: 767px){
   .start-wrap .d-left::after{
@@ -3959,10 +3969,13 @@ nav > ul{
 .tsx-sub .tsx-box{
   flex: calc(100% / 3) 0 0;
 }
+.fw-content.fw-second{
+  margin-bottom: 10px;
+}
 }
 @media (max-width: 640px) {
 .programs-section .owl-carousel .owl-item .ps-content {
-    padding: 0 20px;
+    padding: 0 15px;
 }
   .nine-section .box-items{
     text-align: center;
