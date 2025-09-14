@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Button from "@/components/Button";
 import AngleDown from '@/components/icons/AngleDown';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
 import faqs from '../data/faqs';
 import specs from '../data/specs';
@@ -13,10 +13,87 @@ import product from "../../public/images/miner-product.png";
 import poweredLogos from "../../public/images/powered-logos.svg";
 import warningSvg from "../../public/images/warning.svg";
 import Click from "../../public/images/click.svg";
+import Close from '@/components/Close';
+import { sendContactForm } from '@/lib/api';
+import Check from '@/components/icons/Check'
+import Cross from '@/components/icons/Cross'
 
 export default function CyborgMiner() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [showAll, setShowAll] = useState(false);
+
+  const [popup, setPopup] = useState("hide");
+
+  const popupClose = ()=>{
+    setPopup("hide");
+  }
+  const popupShow = ()=>{
+    setPopup("show");
+  }
+
+  const initValues = { name:"", email:"", city:"", country:"", zipCode:"", promo:false }
+  const initState = { error: "", values : initValues }
+
+  const [sucMsg, setSucMsg] = useState();
+
+  const [state, setState] = useState(initState);
+
+  const {values, error} = state;
+
+  const handleChange = ({ target }) => {
+    const { name, type, value, checked } = target;
+  
+    setState((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [name]: type === 'checkbox' ? checked : value,
+      },
+    }));
+  };
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setState((prev) => ({
+        ...prev,
+        error:"",
+      }));
+      setSucMsg("");
+    },3000)
+  },[sucMsg,error])
+
+  const onSubmit = async(event) => {
+    event.preventDefault()
+    setState((prev) => ({
+      ...prev,
+    }));
+    try {
+      await sendContactForm(values);
+      setState(initState);
+      setSucMsg("Form Submit Sucessfully.")
+    } catch (error) {
+      setState((prev) => ({
+        ...prev,
+        error: error.message,
+      }));
+    }
+  };
+
+  const actualCount = 24436;
+  const [displayCount, setDisplayCount] = useState(actualCount);
+
+  useEffect(() => {
+    const increment = () => {
+      const randomIncrement = Math.floor(Math.random() * 5) + 1;
+      setDisplayCount(prev => prev + randomIncrement);
+    };
+
+    const interval = setInterval(() => {
+      increment();
+    }, Math.floor(Math.random() * 2000) + 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleToggle = (index) => {
     setActiveIndex(prev => (prev === index ? null : index));
@@ -36,12 +113,12 @@ export default function CyborgMiner() {
 .logo a img{
     filter: invert(1) hue-rotate(-186deg) brightness(1.5);
 }
-  .common-section.cyborg-minor-section {
+  .common-section.cyborg-miner-section {
     padding-top: 145px;
     padding-bottom: 75px;
   }
 
-.minor-image-area {
+.miner-image-area {
   border: 1px solid rgba(1, 218, 99, 0.35);
   border-radius: 12px;
   display: flex;
@@ -49,11 +126,12 @@ export default function CyborgMiner() {
 overflow: hidden;
 }
 
-.minor-image {
+.miner-image {
   width: 100%;
+  height: auto;
 }
 
-.minor-disclaimer {
+.miner-disclaimer {
     font-size: 14px;
     color: #e8e8e8;
     background: #314138;
@@ -62,71 +140,71 @@ overflow: hidden;
     display: flex;
     gap: 10px;
 }
-.minor-disclaimer img{
+.miner-disclaimer img{
   color: transparent;
   margin-top: 3px;
   flex: 0;
 }
-.minor-content-area {
+.miner-content-area {
 }
 
-.minor-heading {
+.miner-heading {
     font-size: 42px;
     margin-bottom: 15px;
     font-weight: 800;
     color: #e8e8e8;
 }
 
-.minor-price {
+.miner-price {
     font-size: 26px;
     color: #c5c5c5;
     margin-bottom: 25px;
 }
 
-.minor-tagline {
+.miner-tagline {
     color: #01da63;
     font-weight: 600;
     margin-bottom: 25px;
     letter-spacing: 0.5px;
 }
 
-.minor-features {
+.miner-features {
   list-style: none;
   padding-left: 0;
   margin-bottom: 30px;
 }
 
-.minor-features li {
+.miner-features li {
     margin-bottom: 13px;
     font-size: 16px;
     color: #c5c5c5;
 }
 
-.minor-features li strong{
+.miner-features li strong{
   color: #e8e8e8;
   font-weight: 600;
 }
 
-.minor-buttons {
+.miner-buttons {
     display: flex;
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
-  .minor-buttons .btn{
+  .miner-buttons .btn{
     padding: 14px 18px;
   }
 
-.minor-buttons .btn, .fw-list-btn .btn{
+.miner-buttons .btn, .fw-list-btn .btn{
   border: 1px solid #01da63;
   box-shadow: 0 0 12px 2px rgba(1, 218, 99, 0.5);
 }
-.minor-buttons .btn.dark{
+.miner-buttons .btn.dark{
       opacity: 0.5;
       background: #0d4328;
 }
-.minor-buttons .btn.dark:hover{
+.miner-buttons .btn.dark:hover{
   background: #107447;
 }
 .header-btn .btn{
@@ -137,7 +215,7 @@ overflow: hidden;
 .header-btn .btn:hover{
   background: #107447;
 }
-.minor-counter {
+.miner-counter {
   background: #4A7F61;
   padding: 8px 12px;
   border-radius: 16px;
@@ -150,12 +228,13 @@ overflow: hidden;
   box-shadow: 3px 3px #75B08E;
   margin-bottom: 4px;
 }
-.minor-counter .count{
+.miner-counter .count{
   display: flex;
+  justify-content: center;
   gap: 5px;
   margin-bottom: 6px;
 }
-.minor-counter .count span {
+.miner-counter .count span {
     font-size: 26px;
     font-weight: 900;
     padding: 0px 2px;
@@ -163,15 +242,16 @@ overflow: hidden;
     border-radius: 8px;
     border: 2px solid#579773;
     background: linear-gradient(0deg, #1D5635, #64977c, #1D5635);
+    transition: transform 0.2s ease;
 }
-.minor-counter .label {
+.miner-counter .label {
     font-size: 14px;
     font-weight: 600;
     border-top: 2px solid#437257;
     margin: 0 -12px -12px;
     padding: 2px 12px 8px 12px;
 }
-.minor-note {
+.miner-note {
     margin-bottom: 20px;
     font-size: 16px;
     color: #e8e8e8;
@@ -179,7 +259,7 @@ overflow: hidden;
     padding-bottom: 25px;
 }
 
-.minor-links {
+.miner-links {
     padding-bottom: 25px;
     display: flex;
     gap: 15px 45px;
@@ -187,29 +267,29 @@ overflow: hidden;
     border-bottom: 1px solid #27332d;
 }
 
-.minor-links a {
+.miner-links a {
   color: #c5c5c5;
   text-decoration: underline;
   font-size: 14px;
 }
 
-.minor-links a:hover {
+.miner-links a:hover {
 color: #fff;
 }
 
-.minor-powered-by {
+.miner-powered-by {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.minor-powered-by span {
+.miner-powered-by span {
     font-size: 24px;
     color: #e8e8e8;
     font-weight: 600;
 }
 
-.minor-powered-by img {
+.miner-powered-by img {
     height: 42px;
 }
 
@@ -292,6 +372,9 @@ color: #fff;
           box-shadow: 0 0 20px 0 rgba(37,216,97,.25);
           background: linear-gradient(-135deg, rgb(1 218 99 / 0%), rgb(1 218 99 / 10%));
         }
+        .card-item:hover{
+          box-shadow: 0 15px 30px -5px rgb(37 216 97 / 50%)
+        }
         .card-icon{
           border: 0;
           margin-bottom: 20px;
@@ -303,6 +386,18 @@ color: #fff;
         }
         .card-item h5 span{
           font-weight: 700;
+        }
+        .info-section .card-item h5 {
+            font-size: 25px;
+            line-height: 36px;
+            max-width: 310px;
+        }
+        .info-section .card-item p {
+            font-size: 18px;
+            line-height: 28px;
+        }
+        .info-section .card-wrap{
+          margin-top: 60px;
         }
         .guide-box{
           padding: 25px 35px;
@@ -356,6 +451,11 @@ color: #fff;
             .footer-credit p, .footer-credit a{
             color: #c5c5c5;
             }
+            @media (max-width: 767px){
+              .miner-wrap{
+                gap: 30px;
+              }
+            }
       `}</style>
 
       <Head>
@@ -363,7 +463,7 @@ color: #fff;
         <meta name="description" content="Cyborg Network - The Next Gen AI Infra" />
       </Head>
 
-      <section className="common-section cyborg-minor-section flow-hidden">
+      <section className="common-section cyborg-miner-section flow-hidden">
         <div className="container">
           <div className="miner-wrap d-flex">
             <motion.div
@@ -378,57 +478,71 @@ color: #fff;
               initial={{ opacity: 0, translateX: -100 }}
               whileInView={{ opacity: 1, translateX: 0 }}
             >
-              <div className="minor-image-area">
+              <div className="miner-image-area">
                 <Image src={product} alt="Cyborg Miner" className="miner-image" />
-                <p className="minor-disclaimer">
+                <p className="miner-disclaimer">
                   <Image src={warningSvg} alt="Warning" />
                   The image shown is for illustrative purposes only. The final Cyborg Miner may vary slightly in design. 
                   At the time of purchase, we'll release the official product video with complete details and specifications of the actual device.
                 </p>
               </div>
             </motion.div>
-            <div className="d-right">
-              <div className="minor-content-area">
-                <h1 className="minor-heading">Cyborg Miner V1</h1>
-                <h2 className="minor-price">Coming soon...</h2>
-                <p className="minor-tagline">Just Connect, Mine and Earn</p>
-                <ul className="minor-features">
+            <motion.div className="d-right"
+            viewport={{ once: true }}
+              transition={{
+                type: "spring",
+                bounce: 0.25,
+                duration: 1.5,
+                delay: 0.25,
+              }}
+              initial={{ opacity: 0, translateX: 100 }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+              >
+              <div className="miner-content-area">
+                <h1 className="miner-heading">Cyborg Miner V1</h1>
+                <h2 className="miner-price">Coming soon...</h2>
+                <p className="miner-tagline">Just Connect, Mine and Earn</p>
+                <ul className="miner-features">
                   <li><strong>Performance:</strong> 200 TOPS (INT 8) | 5.3 TFLOPS (FP32) | 55 W ±5%</li>
                   <li><strong>Architecture:</strong> Nvidia Ampere</li>
                   <li><strong>Rewards:</strong> Daily rewards in BORG | Task rewards in stables (USDT/USDC)</li>
                   <li><strong>Includes:</strong> $500 USD in BORG staked against your miner</li>
                 </ul>
-                <div className="minor-buttons">
+                <div className="miner-buttons">
+                  <span onClick={popupShow}>
                   <Button
                     title="Register For Presale"
-                    link="https://tally.so/r/mVN4qg"
+                    link=""
                     size="btn-md"
                     icon={Click}
                   />
+                  </span>
                   <Button title="Add To Cart" link="" size="btn-md" theme="dark"/>
-                  <div className="minor-counter">
+                  <div className="miner-counter">
                     <div className="count">
-                      <span>2</span>
-                      <span>4</span>
-                      <span>4</span>
-                      <span>3</span>
-                      <span>6</span>
+                      {displayCount
+                        .toString()
+                        .padStart(5, "0")
+                        .split("")
+                        .map((digit, index) => (
+                          <span key={index}>{digit}</span>
+                        ))}
                     </div>
                     <span className="label">Live Registration Count</span>
                   </div>
                 </div>
-                <p className="minor-note">Presale Opening soon - only participants get main sale access</p>
-                <div className="minor-links">
+                <p className="miner-note">Presale Opening soon - only participants get main sale access</p>
+                <div className="miner-links">
                   <a href="#">Order FAQ</a>
                   <a href="#">Order Terms</a>
                   <a href="#">After Sales - Terms</a>
                 </div>
-                <div className="minor-powered-by">
+                <div className="miner-powered-by">
                   <span>Powered by:</span>
                   <Image src={poweredLogos} alt="Powered" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -444,11 +558,52 @@ color: #fff;
           >
             The first version of Cyborg Miners is limited to <span className="text-gradient">1,000 units</span> only, reserved exclusively for early supporters who pre-book with a $200 deposit. Pre-bookings will open soon, and only those who secure their spot in advance will gain access to the sale. Don’t miss the chance to be among the first to power the future of AI at the edge.
           </motion.p>
+          <div className="card-wrap">
+            <motion.div
+              className="card-item"
+              viewport={{ once: true }}
+              transition={{ ease: "easeInOut", duration: 1 }}
+              initial={{ opacity: 0, translateY: 100 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+            >
+              <div>
+                <h5><span className="text-gradient light">Decentralized </span>AI Compute
+                </h5>
+                <p>Cyborg Network distributes AI workloads across thousands of nodes.</p>
+              </div>
+            </motion.div>
+            <motion.div
+              className="card-item"
+              viewport={{ once: true }}
+              transition={{ ease: "easeInOut", duration: 1 }}
+              initial={{ opacity: 0, translateY: 100 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+            >
+              <div>
+                <h5><span className="text-gradient light">Privacy-First </span> Architecture
+                </h5>
+                <p>Built with encryption, zero-knowledge proofs, and decentralized identity to protect sensitive data.</p>
+              </div>
+            </motion.div>
+            <motion.div
+              className="card-item"
+              viewport={{ once: true }}
+              transition={{ ease: "easeInOut", duration: 1 }}
+              initial={{ opacity: 0, translateY: 100 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+            >
+              <div>
+                <h5><span className="text-gradient light">Plug</span> and <span className="text-gradient light">Play</span>
+                </h5>
+                <p>Just connect ethernet and power and it starts mining.</p>
+              </div>
+            </motion.div>
+          </div>
           <motion.div
               className="box-desc"
               viewport={{ once: true }}
               transition={{ type: "spring", bounce: 0.25, duration: 1 }}
-              initial={{ opacity: 0, translateY: 200 }}
+              initial={{ opacity: 0, translateY: 150 }}
               whileInView={{ opacity: 1, translateY: 0 }}
               >
                   <h2>Introducing the Stable ROI Promise.</h2>
@@ -470,14 +625,19 @@ color: #fff;
           >
             Specifications
           </motion.h2>
-          <div className="spec-box">
+          <motion.div className="spec-box"
+            viewport={{ once: true }}
+            transition={{ ease: "easeInOut", duration: 0.75 }}
+            initial={{ opacity: 0, translateY: 200 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+          >
             {specs.map((item, index) => (
               <div className="spec-row" key={index}>
                 <div className="spec-label">{item.label} →</div>
                 <div className="spec-value">{item.value}</div>
               </div>
             ))}
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -573,8 +733,8 @@ color: #fff;
           <motion.h2
             className="section-heading"
             viewport={{ once: true }}
-            transition={{ ease: "easeInOut", duration: 0.75 }}
-            initial={{ opacity: 0, translateY: 200 }}
+            transition={{ ease: "easeInOut", duration: 0.5 }}
+            initial={{ opacity: 0, translateY: 100 }}
             whileInView={{ opacity: 1, translateY: 0 }}
           >
             FAQ
@@ -622,6 +782,52 @@ color: #fff;
           </div>
         </div>
       </section>
+
+      <div className={`learn-more-popup ${popup}`}>
+        <div className='lm-content'>
+          <div className="lm-header">
+            <h4>Presale Registration</h4>
+            <span onClick={popupClose}><Close/></span>
+          </div>
+          <div className="lm-body">
+            <div className='contact-wrap'>
+              <motion.div className='cw-form' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.75, delay: 0.25 }} initial={{ opacity: 0, translateY: 200 }} whileInView={{ opacity: 1, translateY: 0 }}>
+                <form method='post'>
+                  <div className='cw-field'>
+                    <input type='text' name='name' placeholder='Name' value={values.name} onChange={handleChange} required/>
+                  </div>
+                  <div className='cw-field'>
+                    <input type='email' name='email' placeholder='Email' value={values.email} onChange={handleChange} required/>
+                  </div>
+                  <div className='cw-field'>
+                    <input type='text' name='city' placeholder='City' value={values.city} onChange={handleChange} required/>
+                  </div>
+                  <div className="cw-field-group">
+                    <div className='cw-field'>
+                      <input type='text' name='country' placeholder='Country' value={values.country} onChange={handleChange} required/>
+                    </div>
+                    <div className='cw-field'>
+                      <input type='text' name='zipCode' placeholder='ZIP Code' value={values.zipCode} onChange={handleChange} required/>
+                    </div>
+                  </div>
+                  <div className='cw-checkbox'>
+                      <input type='checkbox' id="promo" name='promo' checked={values.promo} onChange={handleChange} required/>
+                      <label htmlFor="promo">I here by agree that Cyborg Network can add me to the mailing list to send promotional material</label>
+                  </div>
+                  <div className='cw-btn'>
+                    <button type='submit' className='cw-submit' onClick={onSubmit} disabled={
+                      !values.name || !values.email || !values.city || !values.country || !values.zipCode|| !values.promo
+                      }>Register</button>
+                  </div>
+                </form>
+              </motion.div>
+            </div>
+            <div className={`form-toast ${error ? "error" : ""} ${error || sucMsg ? "" : "d-none"}`}>
+                <p><span><Check/><Cross/></span>{error}{sucMsg}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
