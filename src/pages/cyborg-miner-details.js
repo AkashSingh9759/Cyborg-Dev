@@ -22,6 +22,8 @@ export default function CyborgMiner() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [showAll, setShowAll] = useState(false);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [popup, setPopup] = useState("hide");
 
   const popupClose = ()=>{
@@ -62,22 +64,25 @@ export default function CyborgMiner() {
     },3000)
   },[sucMsg,error])
 
-  const onSubmit = async(event) => {
-    event.preventDefault()
+const onSubmit = async (event) => {
+  event.preventDefault();
+  setIsSubmitting(true);
+  setState((prev) => ({
+    ...prev,
+  }));
+  try {
+    await sendContactForm(values);
+    setState(initState);
+    setSucMsg("Form Submit Successfully.");
+  } catch (error) {
     setState((prev) => ({
       ...prev,
+      error: error.message,
     }));
-    try {
-      await sendContactForm(values);
-      setState(initState);
-      setSucMsg("Form Submit Sucessfully.")
-    } catch (error) {
-      setState((prev) => ({
-        ...prev,
-        error: error.message,
-      }));
-    }
-  };
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const actualCount = 24436;
   const [displayCount, setDisplayCount] = useState(actualCount);
@@ -817,7 +822,15 @@ color: #fff;
                   <div className='cw-btn'>
                     <button type='submit' className='cw-submit' onClick={onSubmit} disabled={
                       !values.name || !values.email || !values.city || !values.country || !values.zipCode|| !values.promo
-                      }>Register</button>
+                      }>
+                        {isSubmitting ? (
+                          <>
+                            <span className="spinner"></span> Registering...
+                          </>
+                        ) : (
+                          "Register"
+                        )}
+                    </button>
                   </div>
                 </form>
               </motion.div>
