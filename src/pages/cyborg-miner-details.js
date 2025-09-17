@@ -401,9 +401,6 @@ color: #fff;
             font-size: 18px;
             line-height: 28px;
         }
-        .info-section .card-wrap{
-          margin-top: 60px;
-        }
         .guide-box{
           padding: 25px 35px;
           border-radius: 15px;
@@ -455,6 +452,9 @@ color: #fff;
             }
             .footer-credit p, .footer-credit a{
             color: #c5c5c5;
+            }
+            .top-card {
+              margin-top: 60px;
             }
             @media (max-width: 767px){
               .miner-wrap{
@@ -552,7 +552,7 @@ color: #fff;
         </div>
       </section>
 
-      <section className="common-section info-section">
+      <section className="common-section">
         <div className="container">
           <motion.p
             className="section-desc"
@@ -563,93 +563,7 @@ color: #fff;
           >
             The first version of Cyborg Miners is limited to <span className="text-gradient">1,000 units</span> only, reserved exclusively for early supporters who pre-book with a $200 deposit. Pre-bookings will open soon, and only those who secure their spot in advance will gain access to the sale. Don’t miss the chance to be among the first to power the future of AI at the edge.
           </motion.p>
-          <div className="card-wrap">
-            <motion.div
-              className="card-item"
-              viewport={{ once: true }}
-              transition={{ ease: "easeInOut", duration: 1 }}
-              initial={{ opacity: 0, translateY: 100 }}
-              whileInView={{ opacity: 1, translateY: 0 }}
-            >
-              <div>
-                <h5><span className="text-gradient light">Decentralized </span>AI Compute
-                </h5>
-                <p>Cyborg Network distributes AI workloads across thousands of nodes.</p>
-              </div>
-            </motion.div>
-            <motion.div
-              className="card-item"
-              viewport={{ once: true }}
-              transition={{ ease: "easeInOut", duration: 1 }}
-              initial={{ opacity: 0, translateY: 100 }}
-              whileInView={{ opacity: 1, translateY: 0 }}
-            >
-              <div>
-                <h5><span className="text-gradient light">Privacy-First </span> Architecture
-                </h5>
-                <p>Built with encryption, zero-knowledge proofs, and decentralized identity to protect sensitive data.</p>
-              </div>
-            </motion.div>
-            <motion.div
-              className="card-item"
-              viewport={{ once: true }}
-              transition={{ ease: "easeInOut", duration: 1 }}
-              initial={{ opacity: 0, translateY: 100 }}
-              whileInView={{ opacity: 1, translateY: 0 }}
-            >
-              <div>
-                <h5><span className="text-gradient light">Plug</span> and <span className="text-gradient light">Play</span>
-                </h5>
-                <p>Just connect ethernet and power and it starts mining.</p>
-              </div>
-            </motion.div>
-          </div>
-          <motion.div
-              className="box-desc"
-              viewport={{ once: true }}
-              transition={{ type: "spring", bounce: 0.25, duration: 1 }}
-              initial={{ opacity: 0, translateY: 150 }}
-              whileInView={{ opacity: 1, translateY: 0 }}
-              >
-                  <h2>Introducing the Stable ROI Promise.</h2>
-                  <p className="section-desc">
-                    We will not release additional Cyborg Miners until the current batch is fully occupied, protecting the value of your investment. And even if your device is idle, you’ll still receive a guaranteed minimum payout of <span className="text-gradient">$300/month</span> to ensure you recover your investment with confidence.
-                  </p>
-            </motion.div>
-        </div>
-      </section>
-   
-      <section className='common-section spec-section'>
-        <div className='container'>
-          <motion.h2
-            className="section-heading"
-            viewport={{ once: true }}
-            transition={{ ease: "easeInOut", duration: 0.75 }}
-            initial={{ opacity: 0, translateY: 200 }}
-            whileInView={{ opacity: 1, translateY: 0 }}
-          >
-            Specifications
-          </motion.h2>
-          <motion.div className="spec-box"
-            viewport={{ once: true }}
-            transition={{ ease: "easeInOut", duration: 0.75 }}
-            initial={{ opacity: 0, translateY: 200 }}
-            whileInView={{ opacity: 1, translateY: 0 }}
-          >
-            {specs.map((item, index) => (
-              <div className="spec-row" key={index}>
-                <div className="spec-label">{item.label} →</div>
-                <div className="spec-value">{item.value}</div>
-              </div>
-            ))}
-          </motion.div>
-
-        </div>
-      </section>
-
-      <section className="common-section">
-        <div className="container">
-          <div className="card-wrap">
+          <div className="card-wrap top-card">
             <motion.div
               className="card-item"
               viewport={{ once: true }}
@@ -696,6 +610,92 @@ color: #fff;
                 <h5>
                   <span className="text-gradient light">&gt;25 decibels</span> (Very quiet)
                 </h5>
+              </div>
+            </motion.div>
+          </div>
+          <motion.div
+              className="box-desc"
+              viewport={{ once: true }}
+              transition={{ type: "spring", bounce: 0.25, duration: 1 }}
+              initial={{ opacity: 0, translateY: 150 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              >
+                  <h2>Introducing the Stable ROI Promise.</h2>
+                  <p className="section-desc">
+                    We will not release additional Cyborg Miners until the current batch is fully occupied, protecting the value of your investment. And even if your device is idle, you’ll still receive a guaranteed minimum payout of <span className="text-gradient">$300/month</span> to ensure you recover your investment with confidence.
+                  </p>
+            </motion.div>
+        </div>
+      </section>
+   
+      <section className='common-section spec-section'>
+        <div className='container'>
+          <motion.h2
+            className="section-heading"
+            viewport={{ once: true }}
+            transition={{ ease: "easeInOut", duration: 0.75 }}
+            initial={{ opacity: 0, translateY: 200 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+          >
+            Specifications
+          </motion.h2>
+          <motion.div className="spec-box"
+            viewport={{ once: true }}
+            transition={{ ease: "easeInOut", duration: 0.75 }}
+            initial={{ opacity: 0, translateY: 200 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+          >
+            {specs.map((item, index) => (
+              <div className="spec-row" key={index}>
+                <div className="spec-label">{item.label} →</div>
+                <div className="spec-value">{item.value}</div>
+              </div>
+            ))}
+          </motion.div>
+
+        </div>
+      </section>
+
+      <section className="common-section info-section">
+        <div className="container">
+          <div className="card-wrap">
+            <motion.div
+              className="card-item"
+              viewport={{ once: true }}
+              transition={{ ease: "easeInOut", duration: 1 }}
+              initial={{ opacity: 0, translateY: 100 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+            >
+              <div>
+                <h5><span className="text-gradient light">Decentralized </span>AI Compute
+                </h5>
+                <p>Cyborg Network distributes AI workloads across thousands of nodes.</p>
+              </div>
+            </motion.div>
+            <motion.div
+              className="card-item"
+              viewport={{ once: true }}
+              transition={{ ease: "easeInOut", duration: 1 }}
+              initial={{ opacity: 0, translateY: 100 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+            >
+              <div>
+                <h5><span className="text-gradient light">Privacy-First </span> Architecture
+                </h5>
+                <p>Built with encryption, zero-knowledge proofs, and decentralized identity to protect sensitive data.</p>
+              </div>
+            </motion.div>
+            <motion.div
+              className="card-item"
+              viewport={{ once: true }}
+              transition={{ ease: "easeInOut", duration: 1 }}
+              initial={{ opacity: 0, translateY: 100 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+            >
+              <div>
+                <h5><span className="text-gradient light">Plug</span> and <span className="text-gradient light">Play</span>
+                </h5>
+                <p>Just connect ethernet and power and it starts mining.</p>
               </div>
             </motion.div>
           </div>
