@@ -339,14 +339,14 @@ button.btn{
 .home-hero-section{
   padding-top: 230px;
   padding-bottom: 45px;
-  background-image: url('../../public/images/hero-bg.svg');
+  background-image: url('/images/hero-bg.svg');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 }
 .miner-soon-section, .app-soon-section{
-  background-image: url('../../public/images/hero-bg.svg');
+  background-image: url('/images/hero-bg.svg');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -370,7 +370,7 @@ button.btn{
 .common-section.connect-hero-section {
   padding-top: 15vw;
   padding-bottom: 10vw;
-  background-image: url('../../public/images/cm-hero-bg.svg');
+  background-image: url('/images/cm-hero-bg.svg');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -379,7 +379,7 @@ button.btn{
 .miner-hero-section {
   padding-top: 145px;
   padding-bottom: 75px;
-  background-image: url('../../public/images/miner-hero-bg.svg');
+  background-image: url('/images/miner-hero-bg.svg');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -406,7 +406,7 @@ button.btn{
 .team-hero-section, .legal-hero-section, .error-section{
   padding-top: 200px;
   padding-bottom: 0;
-  background-image: url('../../public/images/team-hero-bg.svg');
+  background-image: url('/images/team-hero-bg.svg');
   background-position: top center;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -414,7 +414,7 @@ button.btn{
 .common-section.error-section{
   padding-top: 150px;
   padding-bottom: 150px;
-  background-image: url('../../public/images/team-hero-bg.svg');
+  background-image: url('/images/team-hero-bg.svg');
   background-position: top center;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -423,7 +423,7 @@ button.btn{
   margin-bottom: 45px;
 }
 .globe-section{
-  background-image: url('../../public/images/globe.jpg');
+  background-image: url('/images/globe.jpg');
   background-position: 53% 50%;
   background-size: 45%;
   background-repeat: no-repeat;
@@ -501,7 +501,7 @@ button.btn{
   font-weight: var(--medium);
 }
 .tops-section{
-  background-image: url('../../public/images/200.svg');
+  background-image: url('/images/200.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -514,7 +514,7 @@ button.btn{
   text-align: center;
 }
 .features-section{
-  background-image: url('../../public/images/features-bg.svg');
+  background-image: url('/images/features-bg.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -526,7 +526,7 @@ button.btn{
   position: relative;
 }
 .features-section .hero-heading::before, .features-section .hero-heading::after {
-  background-image: url(../../public/images/features-sparks.svg);
+  background-image: url(/images/features-sparks.svg);
   position: absolute;
   content: "";
   background-size: 20px;
@@ -570,7 +570,7 @@ button.btn{
   content:"";
   width: 100%;
   height: 100%;
-  background-image: url('../../public/images/feature-grid.svg');
+  background-image: url('/images/feature-grid.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -605,7 +605,7 @@ button.btn{
   transition: all 0.35s linear;
 }
 .unlock-section {
-  background-image: url('../../public/images/unlock.png');
+  background-image: url('/images/unlock.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -629,7 +629,7 @@ button.btn{
   content:"";
   width: 100%;
   height: 100%;
-  background-image: url('../../public/images/card-bg.svg');
+  background-image: url('/images/card-bg.svg');
   background-size: 100%;
   background-position: top;
   background-repeat: no-repeat;
@@ -641,7 +641,7 @@ button.btn{
   content:"";
   width: 100%;
   height: 100%;
-  background-image: url('../../public/images/arc-bg.jpg');
+  background-image: url('/images/arc-bg.jpg');
   background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -712,7 +712,7 @@ button.btn{
   color: var(--text-light-87);
 }
 .nvidia-section {
-  background-image: url('../../public/images/emblem-watermark.svg');
+  background-image: url('/images/emblem-watermark.svg');
   background-size: 22vw;
   background-repeat: no-repeat;
   background-position: left 50px;
@@ -727,7 +727,7 @@ button.btn{
 .fiveg-wrap{
   border-radius: 30px;
   padding: 100px 75px;
-  background-image: url('../../public/images/5g-ready.jpg');
+  background-image: url('/images/5g-ready.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -885,10 +885,10 @@ h1 span.break, h2 span.brea, p span.break{
   height: auto;
 }
 .st-left .st-box {
-  background-image: url(../../public/images/provide.jpg);
+  background-image: url(/images/provide.jpg);
 }
 .st-right .st-box {
-  background-image: url(../../public/images/launch.jpg);
+  background-image: url(/images/launch.jpg);
 }
 .st-box {
   min-height: 560px;
@@ -1205,7 +1205,7 @@ h1 span.break, h2 span.brea, p span.break{
   font-size: 12px;
 }
 .programs-section{
-    background-image: url('../../public/images/slider-bg.jpg');
+    background-image: url('/images/slider-bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1464,7 +1464,7 @@ h1 span.break, h2 span.brea, p span.break{
   content:"";
   width: 100%;
   height: 100%;
-  background-image: url('../../public/images/sw-bg.svg');
+  background-image: url('/images/sw-bg.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1518,7 +1518,7 @@ h1 span.break, h2 span.brea, p span.break{
   color: var(--text-dark-75);
 }
 .pill-section{
-  background-image: url('../../public/images/pill-net.svg');
+  background-image: url('/images/pill-net.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1553,7 +1553,7 @@ h1 span.break, h2 span.brea, p span.break{
   display: flex;
   align-items: center;
   gap: 20px;
-  background-image: url(../../public/images/tsx-main-bg.svg);
+  background-image: url(/images/tsx-main-bg.svg);
   background-position: 360px center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1572,7 +1572,7 @@ h1 span.break, h2 span.brea, p span.break{
   transition: all 0.5s linear;
 }
 .tsx-sub .tsx-box{
-  background-image: url(../../public/images/tsx-sub-bg.svg);
+  background-image: url(/images/tsx-sub-bg.svg);
   background-position: center 220px;
   background-size: contain;
   flex: calc(100% / 6) 0 0;
@@ -1730,7 +1730,7 @@ h1 span.break, h2 span.brea, p span.break{
   box-shadow: 0 10px 10px -5px #d5feff;
 }
 .ns-wrap{
-  background-image: url('../../public/images/newsletter-bg.svg');
+  background-image: url('/images/newsletter-bg.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2339,27 +2339,27 @@ color: #2ed2ba;
 .left-logo-bg:after{
   left: 0;
   top: 0;
-  background-image: url(../../public/images/left-logo-bg.svg);
+  background-image: url(/images/left-logo-bg.svg);
   background-position: left center;
 }
 .right-logo-bg:after {
   right: 0;
   bottom: 50%;
   background-position: right center;
-  background-image: url(../../public/images/right-logo-bg.svg);
+  background-image: url(/images/right-logo-bg.svg);
 }
 .middle-blur:before{
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url(../../public/images/middle-blur.svg);
+  background-image: url(/images/middle-blur.svg);
   background-position: center;
 }
 .left-blur:before{
   left: 0;
   top: -50%;
   height: 150vh;
-  background-image: url(../../public/images/left-blur.svg);
+  background-image: url(/images/left-blur.svg);
   background-position: left center;
 }
 .right-blur:before {
@@ -2367,14 +2367,14 @@ color: #2ed2ba;
   top: 0;
   height: 150vh;
   background-position: right center;
-  background-image: url(../../public/images/right-blur.svg);
+  background-image: url(/images/right-blur.svg);
 }
 .bottom-blur:before{
   left: 0;
   top: 55%;
   transform: translateY(-50%);
   height: 125vh;
-  background-image: url(../../public/images/bottom-blur.svg);
+  background-image: url(/images/bottom-blur.svg);
   background-position: center;
 }
 .roadmap-bg:after{
@@ -2382,7 +2382,7 @@ color: #2ed2ba;
   top: 55%;
   height: 200vh;
   transform: translateY(-50%);
-  background-image: url(../../public/images/roadmap-bg.svg);
+  background-image: url(/images/roadmap-bg.svg);
   background-position: center;
   background-size: cover;
 }
