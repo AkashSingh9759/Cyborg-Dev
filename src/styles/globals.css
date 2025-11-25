@@ -182,8 +182,9 @@ header {
   position: relative;
   z-index: 1;
 }
-.logo a img{
+.logo a img {
   max-height: 48px;
+  filter: drop-shadow(0 2px 2px #fff);
 }
 .header-wrap ul{
   display: flex;
@@ -804,8 +805,9 @@ button.btn{
   line-height: 28px;
   margin-bottom: 5px;
 }
-.start-section{
+.home-video-section{
   padding-top: 30px;
+  padding-bottom: 50px;
 }
 .d-flex{
   display: flex;
@@ -1002,8 +1004,8 @@ h1 span.break, h2 span.brea, p span.break{
   font-weight: var(--medium);
 }
 .st-steps p{
-  font-size: 22px;
-  line-height: 32px;
+  font-size: 21px;
+  line-height: 31px;
   position: relative;
   z-index: 2;
 }
@@ -2672,6 +2674,70 @@ filter: blur(75px);
   100% { transform: rotate(360deg); }
 }
 
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.introVideo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+.controls-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 24px;
+  background: rgba(0, 0, 0, 0.25);
+  transition: opacity 0.35s ease;
+}
+
+.controls-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.play-button {
+  width: 68px;
+  height: 68px;
+  background: white;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.play-button svg{
+  position: relative;
+  left: 2px;
+}
+.play-button:hover {
+  transform: scale(1.08);
+  background: #f0f0f0;
+}
+
+.video-label {
+  color: white;
+  font-family: var(--Unbounded);
+  font-size: 18px;
+  margin-top: 5px;
+  font-weight: var(--regular);
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
 
 
 
@@ -2815,8 +2881,9 @@ filter: blur(75px);
   padding-top: 10px;
   padding-bottom: 0;
 }
-.start-section{
+.home-video-section{
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 .center-hero-heading{
   margin-bottom: 60px;
@@ -2862,8 +2929,8 @@ filter: blur(75px);
   margin-bottom: 8px;
 }
 .st-steps p {
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 19px;
+  line-height: 29px;
 }
 .pill-section .section-desc {
   font-size: 20px;
@@ -3102,8 +3169,9 @@ filter: blur(75px);
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.start-section{
+.home-video-section{
   padding-top: 10px;
+  padding-bottom: 15px;
 }
 .roadmap-bg:after {
   height: 150vh;
