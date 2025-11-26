@@ -186,6 +186,21 @@ header {
   max-height: 48px;
   filter: drop-shadow(0 2px 2px #fff);
 }
+.logo a{
+  position: relative;
+}
+.logo a:after {
+    position: absolute;
+    content: "";
+    width: 110%;
+    height: 110%;
+    background-color: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: blur(20px);
+}
 .header-wrap ul{
   display: flex;
   align-items: center;
