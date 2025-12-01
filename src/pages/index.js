@@ -113,7 +113,7 @@ export default function Home() {
                 playsInline
                 onClick={togglePlay}
               >
-                <source src="https://firebasestorage.googleapis.com/v0/b/website-61898.firebasestorage.app/o/intro%20original.mp4?alt=media&token=9bea7d17-aa5b-4ae1-bd9f-0ff1370f1594" type="video/mp4" />
+                <source src="https://firebasestorage.googleapis.com/v0/b/website-61898.firebasestorage.app/o/intro%20optimized.mp4?alt=media&token=fe4f6c73-6284-4f55-840a-a118b3fb8a88" type="video/mp4" />
               </video>
 
               <div

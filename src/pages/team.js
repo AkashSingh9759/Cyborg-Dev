@@ -9,6 +9,7 @@ import Tom from "../../public/images/team/tom.png";
 import Akash from "../../public/images/team/akash.png";
 import Shashank from "../../public/images/team/shashank.png";
 import Jesse from "../../public/images/team/jesse.png";
+import Hashana from "../../public/images/team/hashana.png";
 import Linkedin from "@/components/icons/Linkedin";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -318,6 +319,28 @@ export default function Team() {
                 <div className="tsx-content">
                   <h4>Jesse Chejieh</h4>
                   <p>Rust Systems Engineer</p>
+                </div>
+              </motion.div>
+              <motion.div
+                className="tsx-box"
+                viewport={{ once: true }}
+                transition={{ ease: "easeInOut", duration: 1 }}
+                initial={{ opacity: 0, translateY: 100 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+              >
+                <div className="tsx-img">
+                  <Image src={Hashana} alt="Team" />
+                  <Link
+                    href="#"
+                    target="_blank"
+                    className="tsx-link"
+                  >
+                    <Linkedin />
+                  </Link>
+                </div>
+                <div className="tsx-content">
+                  <h4>Hashana Sathick</h4>
+                  <p>Opeartions</p>
                 </div>
               </motion.div>
               <motion.div
