@@ -310,6 +310,7 @@ export default function Team() {
                   <Image src={Jesse} alt="Team" />
                   <Link
                     href="#"
+                    onClick={(e) => e.preventDefault()}
                     target="_blank"
                     className="tsx-link"
                   >
@@ -331,7 +332,7 @@ export default function Team() {
                 <div className="tsx-img">
                   <Image src={Hashana} alt="Team" />
                   <Link
-                    href="#"
+                    href="https://www.linkedin.com/in/hashana-j/"
                     target="_blank"
                     className="tsx-link"
                   >
@@ -340,7 +341,7 @@ export default function Team() {
                 </div>
                 <div className="tsx-content">
                   <h4>Hashana Sathick</h4>
-                  <p>Opeartions</p>
+                  <p>Operations</p>
                 </div>
               </motion.div>
               <motion.div
